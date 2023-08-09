@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins',sans-serif;
+}
+:root{
+    --bg-color: #34344c;
+    --second-bg-color:  bisque;
+    --text-color: white;
+    --main-color: rgb(200, 8, 217);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background: url('/image/nightsky.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content{
+    max-width: 60rem;
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.home-content span{
+    color: var(--second-bg-color);
+}
+.home-content .text-animate{
+    position: relative;
+    width: 32.8rem;
+}
+
+.text-animate h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .6px violet;
+}
+.home-content p{
+    font-size: 1.6rem;
+    margin: 1rem 0 4rem;
+}
+.btn-box{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+.btn-box .btn{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--bg-color);
+    border: .2rem solid var(--second-bg-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: var(--second-bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.btn-box .btn:hover{
+    color: var(--bg-color);
+    background-color: var(--second-bg-color);
+    
+}
+ 
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 1s;
+} 
+.btn-box .btn:hover::before{
+    width: 100%;
+}
+
+.home-sc{
+    position: absolute;
+    bottom: 4rem;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sc a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--second-bg-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--second-bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+.home-sc a:hover{
+    color: var(--bg-color);
+}
+.home-sc a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.home-sc a:hover::before{
+    width: 100%;
+}
+
+.pic{
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 70%;
+    width: 45%;
+    height: 60%;
+    
+}
+.pic img{
+    width: 35%;
+    height: auto;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--bg-color);
+    padding-bottom: 6rem;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+}
+
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+span{
+    color: var(--main-color);
+}
+.about-img{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.about-img img{
+    width: 90%;
+    border-radius: 10%;
+    border: .2rem solid var(--main-color);
+}
+/* .about-img .circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width:  90%;
+    height: 110%;
+    border-radius: 10%;
+    border-top: .2rem solid var(--bg-color);
+    border-bottom: .2rem solid var(--bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+} */
+
+.about-cont{
+    text-align: center;
+}
+.about-cont h3{
+    padding: 20px;
+    font-size: 2.6rem;
+}
+.about-cont p{
+    font-size: 1.6rem;
+    margin: 0 0 3rem;
+}
+
+.container {
+    position: relative;
+    align-items: center;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+.container:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card {
+    padding: 2px 16px 30px;
+    background: var(--bg-color);
+    width: 270px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.card:hover{
+    background-color: var(--bg-color);
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all is ease;
+}
+.card-img{
+    background-color: var(--bg-color);
+    height: 240px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 10px;
+}
+.pic-1{
+    background-image: url(/image/bnmpc.png);
+}
+.pic-2{
+    background-image: url(/image/bnmpc.png);
+}
+.pic-3{
+    background-image: url(/image/iiuc.png);
+}
+.card h1{
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+.card p{
+    font-size: 1.5rem;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.content .continfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.content .continfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.content .continfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
